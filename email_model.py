@@ -1,7 +1,9 @@
+import os
+
 class Email:
     def __init__(self, filepath):
         self.filepath = filepath
-        self.filename = filepath.split("/")[-1]
+        self.filename = os.path.basename(filepath)
         self.subject = ""
         self.sender = ""
         self.body = ""
