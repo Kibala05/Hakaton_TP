@@ -17,6 +17,9 @@ class Email:
                 return False
             self._parse(content)
             return True
+        except UnicodeDecodeError:
+            self.error = "binary_file"
+            return False    
         except Exception as e:
             self.error = str(e)
             return False
